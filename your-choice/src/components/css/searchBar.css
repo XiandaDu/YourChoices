@@ -1,0 +1,32 @@
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .search-input {
+    width: 90%; 
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  .search-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  @media (min-width: 768px) {
+    .search-input {
+      width: 70%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .search-input {
+      width: 90%;
+    }
+  }
+  

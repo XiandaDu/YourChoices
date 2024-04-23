@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import SearchBar from './components/seachBar';
+import {
+  SearchBar,
+  Works,
+} from './components'
 
 function App() {
   const handleSearch = (query) => {
@@ -9,10 +12,18 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <div className="relative z-0 w-full">
+      <div className="relative z-0">
 
       <h1>Home Page</h1>
-      <SearchBar onSearch={handleSearch} />
+      <div style={{width: '100%'}}>
+      <SearchBar />
+
+      </div>
+      <div style={{ marginTop: "20px"}}>
+      <Works />
+
+      </div>
+      
       </div>
     </BrowserRouter>
   )

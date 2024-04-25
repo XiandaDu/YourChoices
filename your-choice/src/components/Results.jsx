@@ -58,25 +58,25 @@ const Works = () => {
         <button
           className={`bg-slate-800 hover:bg-slate-500 text-white px-4 py-2 rounded ${selectedType === 'TaoBao' ? 'bg-slate-500' : ''
             }`}
-          onClick={() => setSelectedType('CI/CD')}>
+          onClick={() => setSelectedType('TaoBao')}>
           Taobao
         </button>
         <button
           className={`bg-slate-800 hover:bg-slate-500 text-white px-4 py-2 rounded ${selectedType === 'Google' ? 'bg-slate-500' : ''
             }`}
-          onClick={() => setSelectedType('AI')}>
+          onClick={() => setSelectedType('Google')}>
           Google
         </button>
         <button
           className={`bg-slate-800 hover:bg-slate-500 text-white px-4 py-2 rounded ${selectedType === 'Bing' ? 'bg-slate-500' : ''
             }`}
-          onClick={() => setSelectedType('Game')}>
+          onClick={() => setSelectedType('Bing')}>
           Bing
         </button>
         <button
           className={`bg-slate-800 hover:bg-slate-500 text-white px-4 py-2 rounded ${selectedType === 'Amazon' ? 'bg-slate-500' : ''
             }`}
-          onClick={() => setSelectedType('GO')}>
+          onClick={() => setSelectedType('Amazon')}>
           Amazon
         </button>
         
@@ -85,11 +85,10 @@ const Works = () => {
         {db_projects.map((project, index) => (
           <div key={index} className="project-item">
             <Tilt options={{ max: 45, scale: 1, speed: 450 }} className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
-              <div className="relative w-full h-[230px]">
-                <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-2xl" />
-                <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-                </div>
-              </div>
+            <div style={{ position: 'relative', width: '100%', height: '230px' }}>
+                <img src={project.image} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '1rem' }} />
+            </div>
+
               <div className="mt-5">
                 <h3 className="text-white font-bold text-[24px]">{project.name}</h3>
                 <p className="mt-2 text-secondary text-[14px]">{project.description}</p>

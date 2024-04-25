@@ -9,17 +9,26 @@ import { SectionWrapper } from '../hoc'
 
 const SearchBar = () => {
     const theme = useTheme();
-
+    const [searchValue, setSearchValue] = useState('');
     const [isFocused, setIsFocused] = useState(false);
 
+    
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            console.log("Search value on Enter:", searchValue);
+        }
+    };
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Box sx={{ width: '100%', marginTop: 5 }}>
                 <TextField
-                fullWidth // This prop stretches the TextField to full width
+                fullWidth
                 id="input-with-icon-textfield"
                 label="Search field"
                 type="search"
+                value={searchValue}
+                onChange={(event) => setSearchValue(event.target.value)}
+                onKeyDown={handleKeyDown}
                 InputProps={{
                     startAdornment: (
                     <InputAdornment position="start">
